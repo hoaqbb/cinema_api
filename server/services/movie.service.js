@@ -11,25 +11,19 @@ async function getMovies(status){
   return data;
 }
 
+//DATE_FORMAT(release_date , '%d/%m/%Y') AS release_date
 //lay movie bang id
 async function getMovieById(movie_id){
   const row = await db.query(`SELECT movie_id, movie_name, movie_img, 
-                              description FROM movie 
+                              status, duration, actors, directors, 
+                              release_date, description FROM movie 
                               WHERE movie_id=${movie_id}`);
   const data = helper.emptyOrRows(row);
-  return data.length > 0 ? data[0] : {};
-}
-
-//authenticate
-async function findUserByUsername(username){
-  const row = await db.query(`SELECT username, password FROM user 
-                              WHERE username=${username}`);
-  const data = helper.emptyOrRows(row);
-  return data.length > 0 ? data[0] : {};
+  return data[0]
+  // return data.length > 0 ? data[0] : {};
 }
 
 module.exports = {
   getMovies,
-  getMovieById,
-  findUserByUsername
+  getMovieById
 }

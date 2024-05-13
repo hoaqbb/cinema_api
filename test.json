@@ -1,0 +1,17 @@
+{
+    "show_id": 1,
+    "cinema_id": 1,
+    "room_id": 1,
+    "movie": {
+        "movie_id": 1,
+        "start_time": "13:00:00",
+        "movie_name": "Dune",
+        "status": 1,
+        "movie_img": "https://i.pinimg.com/736x/12/3f/4c/123f4ca3e5ba509241ecc351a1f5b753.jpg",
+        "duration": 166,
+        "actors": "Timothée Chalamet, Zendaya, Rebecca Ferguson, Javier Bardem, Josh Brolin, Austin Butler",
+        "directors": "Denis Villeneuve",
+        "release_date": "2024-02-27T17:00:00.000Z",
+        "description": "Following the fall of House Atreides in Dune (2021), exiled Duke Paul Atreides continues his journey of enlightenment in the barren deserts of Arrakis. Soon, the noble son embraces the ways of the blue-eyed Fremen warriors, unaware that rumours about the prophesied Dune Messiah divide the tribe. After all, the suffocating grip of House Harkonnen tightens by the minute, ushering in a brutal era of war over the control of the planet and its vast spice-rich fields. But above all else, water is life. As shrewd machinators plot destruction and death, the volatile future demands the emergence of a new leader. Now caught between personal hopes and the aspirations of others, will Paul become the fighter he always wanted to be?"
+    }
+}
