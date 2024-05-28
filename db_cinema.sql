@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th5 13, 2024 lúc 04:34 PM
+-- Thời gian đã tạo: Th5 28, 2024 lúc 10:16 AM
 -- Phiên bản máy phục vụ: 8.0.31
 -- Phiên bản PHP: 7.4.33
 
@@ -88,24 +88,25 @@ CREATE TABLE `movie` (
   `actors` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `directors` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `release_date` text COLLATE utf8mb4_general_ci,
-  `description` varchar(3000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `description` varchar(3000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `trailer` varchar(256) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `movie`
 --
 
-INSERT INTO `movie` (`movie_id`, `movie_name`, `status`, `movie_img`, `duration`, `actors`, `directors`, `release_date`, `description`) VALUES
-(1, 'Dune', 1, 'https://i.pinimg.com/736x/12/3f/4c/123f4ca3e5ba509241ecc351a1f5b753.jpg', 166, 'Timothée Chalamet, Zendaya, Rebecca Ferguson, Javier Bardem, Josh Brolin, Austin Butler', 'Denis Villeneuve', '28/02/2024', 'Following the fall of House Atreides in Dune (2021), exiled Duke Paul Atreides continues his journey of enlightenment in the barren deserts of Arrakis. Soon, the noble son embraces the ways of the blue-eyed Fremen warriors, unaware that rumours about the prophesied Dune Messiah divide the tribe. After all, the suffocating grip of House Harkonnen tightens by the minute, ushering in a brutal era of war over the control of the planet and its vast spice-rich fields. But above all else, water is life. As shrewd machinators plot destruction and death, the volatile future demands the emergence of a new leader. Now caught between personal hopes and the aspirations of others, will Paul become the fighter he always wanted to be?'),
-(2, 'Interstella', 1, 'https://i.pinimg.com/564x/d2/70/89/d270896d9bfbc63513d1090224070e8b.jpg', 169, 'Matthew McConaughey, Anne Hathaway, Jessica Chastain, Mackenzie Foy', 'Christopher Nolan', '26/10/2014', 'Earth\'s future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankind\'s survival: Interstellar travel. A newly discovered wormhole in the far reaches of our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right environment to sustain human life.'),
-(3, 'Teeth', 1, 'https://i.pinimg.com/564x/f8/df/d7/f8dfd77aebf20a6f06722e6b349f439b.jpg', 0, NULL, NULL, NULL, 'ấdfasdfasdf'),
-(4, 'Rivers', 1, 'https://i.pinimg.com/564x/f6/65/ac/f665ac5c9f6888d4608fa0ed20c70923.jpg', 0, NULL, NULL, NULL, 'a'),
-(5, 'The Call Of The Wild', 1, 'https://i.pinimg.com/736x/c9/d9/11/c9d9118099b6b899f62ba3ffa82903ee.jpg', 0, NULL, NULL, NULL, 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqq'),
-(6, 'Parasite', 1, 'https://i.pinimg.com/564x/5e/24/ca/5e24ca5266644f92d331fc6e88930b85.jpg', 0, NULL, NULL, NULL, 'wwwwwwwwwwwwwwwwwww'),
-(7, 'Bird Box', 1, 'https://i.pinimg.com/564x/32/c5/96/32c5966ffd0c9f4fb1f4075d560ac420.jpg', 0, NULL, NULL, NULL, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
-(8, 'The Witch', 1, 'https://i.pinimg.com/736x/f4/f0/4a/f4f04a43138524a907289e5cd87750f0.jpg', 0, NULL, NULL, NULL, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk'),
-(9, 'Room', 1, 'https://i.pinimg.com/564x/30/59/c1/3059c11e43be0b0e68e8d0c049017fc9.jpg', 0, NULL, NULL, NULL, 'ggggggggggggggggggggggggggggggg'),
-(10, 'Stranger Things', 0, 'https://i.pinimg.com/736x/68/46/5a/68465aaec5f8632d0103c938ec5f3425.jpg', 0, NULL, NULL, NULL, 'ghhhhhhhhhhhhhhhhhh');
+INSERT INTO `movie` (`movie_id`, `movie_name`, `status`, `movie_img`, `duration`, `actors`, `directors`, `release_date`, `description`, `trailer`) VALUES
+(1, 'Dune', 1, 'https://i.pinimg.com/736x/12/3f/4c/123f4ca3e5ba509241ecc351a1f5b753.jpg', 166, 'Timothée Chalamet, Zendaya, Rebecca Ferguson, Javier Bardem, Josh Brolin, Austin Butler', 'Denis Villeneuve', '28/02/2024', 'Following the fall of House Atreides in Dune (2021), exiled Duke Paul Atreides continues his journey of enlightenment in the barren deserts of Arrakis. Soon, the noble son embraces the ways of the blue-eyed Fremen warriors, unaware that rumours about the prophesied Dune Messiah divide the tribe. After all, the suffocating grip of House Harkonnen tightens by the minute, ushering in a brutal era of war over the control of the planet and its vast spice-rich fields. But above all else, water is life. As shrewd machinators plot destruction and death, the volatile future demands the emergence of a new leader. Now caught between personal hopes and the aspirations of others, will Paul become the fighter he always wanted to be?', 'p5BxPH6PXl0'),
+(2, 'Interstella', 1, 'https://i.pinimg.com/564x/d2/70/89/d270896d9bfbc63513d1090224070e8b.jpg', 169, 'Matthew McConaughey, Anne Hathaway, Jessica Chastain, Mackenzie Foy', 'Christopher Nolan', '26/10/2014', 'Earth\'s future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankind\'s survival: Interstellar travel. A newly discovered wormhole in the far reaches of our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right environment to sustain human life.', 'QqSp_dwslro'),
+(3, 'Teeth', 1, 'https://i.pinimg.com/564x/f8/df/d7/f8dfd77aebf20a6f06722e6b349f439b.jpg', 0, NULL, NULL, NULL, 'ấdfasdfasdf', ''),
+(4, 'Rivers', 1, 'https://i.pinimg.com/564x/f6/65/ac/f665ac5c9f6888d4608fa0ed20c70923.jpg', 0, NULL, NULL, NULL, 'a', ''),
+(5, 'The Call Of The Wild', 1, 'https://i.pinimg.com/736x/c9/d9/11/c9d9118099b6b899f62ba3ffa82903ee.jpg', 0, NULL, NULL, NULL, 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqq', ''),
+(6, 'Parasite', 1, 'https://i.pinimg.com/564x/5e/24/ca/5e24ca5266644f92d331fc6e88930b85.jpg', 0, NULL, NULL, NULL, 'wwwwwwwwwwwwwwwwwww', ''),
+(7, 'Bird Box', 1, 'https://i.pinimg.com/564x/32/c5/96/32c5966ffd0c9f4fb1f4075d560ac420.jpg', 0, NULL, NULL, NULL, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', ''),
+(8, 'The Witch', 1, 'https://i.pinimg.com/736x/f4/f0/4a/f4f04a43138524a907289e5cd87750f0.jpg', 0, NULL, NULL, NULL, 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', ''),
+(9, 'Room', 1, 'https://i.pinimg.com/564x/30/59/c1/3059c11e43be0b0e68e8d0c049017fc9.jpg', 0, NULL, NULL, NULL, 'ggggggggggggggggggggggggggggggg', ''),
+(10, 'Stranger Things', 0, 'https://i.pinimg.com/736x/68/46/5a/68465aaec5f8632d0103c938ec5f3425.jpg', 0, NULL, NULL, NULL, 'ghhhhhhhhhhhhhhhhhh', '');
 
 -- --------------------------------------------------------
 
@@ -118,26 +119,50 @@ CREATE TABLE `movie_show` (
   `cinema_id` int NOT NULL,
   `movie_id` int NOT NULL,
   `room_id` int NOT NULL,
-  `start_time` time NOT NULL
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `movie_show`
 --
 
-INSERT INTO `movie_show` (`show_id`, `cinema_id`, `movie_id`, `room_id`, `start_time`) VALUES
-(1, 1, 1, 1, '13:00:00'),
-(2, 1, 1, 2, '16:00:00'),
-(3, 1, 1, 3, '18:00:00'),
-(4, 1, 1, 4, '21:00:00'),
-(43, 1, 2, 1, '08:00:00'),
-(44, 1, 2, 2, '09:00:00'),
-(45, 1, 2, 3, '10:00:00'),
-(46, 1, 2, 4, '12:00:00'),
-(51, 2, 2, 1, '08:00:00'),
-(52, 2, 2, 2, '09:00:00'),
-(53, 2, 2, 3, '10:00:00'),
-(54, 2, 2, 4, '12:00:00');
+INSERT INTO `movie_show` (`show_id`, `cinema_id`, `movie_id`, `room_id`, `start_time`, `end_time`) VALUES
+(1, 1, 1, 1, '13:00:00', '00:00:00'),
+(2, 1, 1, 2, '16:00:00', '00:00:00'),
+(3, 1, 1, 3, '18:00:00', '00:00:00'),
+(4, 1, 1, 4, '21:00:00', '00:00:00'),
+(43, 1, 2, 1, '08:00:00', '10:00:00'),
+(44, 1, 2, 2, '09:00:00', '00:00:00'),
+(45, 1, 2, 3, '10:00:00', '00:00:00'),
+(46, 1, 2, 4, '12:00:00', '00:00:00'),
+(51, 2, 2, 1, '08:00:00', '00:00:00'),
+(52, 2, 2, 2, '09:00:00', '00:00:00'),
+(53, 2, 2, 3, '11:00:00', '00:00:00'),
+(54, 2, 2, 4, '12:00:00', '00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `payment`
+--
+
+CREATE TABLE `payment` (
+  `payment_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `amount` int NOT NULL,
+  `total_ticket` int NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `payment`
+--
+
+INSERT INTO `payment` (`payment_id`, `user_id`, `amount`, `total_ticket`, `date`) VALUES
+(46, 1, 140000, 2, '2024-05-27 14:30:00'),
+(48, 1, 70000, 1, '2024-05-27 14:32:00'),
+(49, 1, 140000, 2, '2024-05-28 09:20:00');
 
 -- --------------------------------------------------------
 
@@ -158,26 +183,91 @@ CREATE TABLE `room_seat` (
 --
 
 INSERT INTO `room_seat` (`seat_id`, `room_id`, `seat_name`, `seat_status`, `price`) VALUES
-(1, 1, 'A', 0, 70000),
-(2, 1, 'B', 0, 70000),
+(1, 1, 'A', 1, 70000),
+(2, 1, 'B', 1, 70000),
 (3, 1, 'C', 0, 70000),
 (4, 1, 'D', 0, 70000),
 (5, 1, 'E', 0, 70000),
 (6, 1, 'F', 0, 70000),
-(7, 1, 'G', 1, 70000),
+(7, 1, 'G', 0, 70000),
 (8, 1, 'H', 1, 70000),
-(9, 1, 'I', 1, 70000),
+(9, 1, 'I', 0, 70000),
 (10, 1, 'J', 1, 70000),
-(11, 2, 'A', 1, 70000),
-(12, 2, 'B', 0, 70000),
+(11, 2, 'A', 0, 70000),
+(12, 2, 'B', 1, 70000),
 (13, 2, 'C', 0, 70000),
 (14, 2, 'D', 0, 70000),
 (15, 2, 'E', 1, 70000),
 (16, 2, 'F', 0, 70000),
-(17, 2, 'G', 0, 70000),
+(17, 2, 'G', 1, 70000),
 (18, 2, 'H', 1, 70000),
-(19, 2, 'I', 1, 70000),
-(20, 2, 'J', 1, 70000);
+(19, 2, 'I', 0, 70000),
+(20, 2, 'J', 0, 70000),
+(21, 1, 'K', 0, 70000),
+(22, 1, 'L', 0, 70000),
+(23, 1, 'M', 0, 70000),
+(24, 1, 'N', 1, 70000),
+(25, 1, 'O', 1, 70000),
+(26, 1, 'P', 0, 70000),
+(27, 1, 'Q', 0, 70000),
+(28, 1, 'R', 0, 70000),
+(29, 1, 'S', 0, 70000),
+(30, 1, 'T', 0, 70000),
+(31, 1, 'U', 0, 70000),
+(32, 1, 'V', 1, 70000),
+(33, 1, 'W', 0, 70000),
+(34, 1, 'X', 1, 70000),
+(35, 1, 'Y', 0, 70000),
+(36, 1, 'Z', 0, 70000),
+(37, 1, 'AA', 0, 70000),
+(38, 1, 'AB', 0, 70000),
+(39, 1, 'AC', 1, 70000),
+(40, 1, 'AD', 1, 70000),
+(41, 1, 'AE', 0, 70000),
+(42, 1, 'AF', 0, 70000),
+(43, 1, 'AG', 0, 70000),
+(44, 1, 'AH', 0, 70000),
+(45, 1, 'AI', 0, 70000),
+(46, 1, 'AJ', 0, 70000),
+(47, 1, 'AK', 0, 70000),
+(48, 1, 'AL', 0, 70000),
+(49, 1, 'AM', 0, 70000),
+(50, 1, 'AN', 0, 70000),
+(51, 1, 'AO', 0, 70000),
+(52, 1, 'AP', 0, 70000),
+(53, 1, 'AQ', 0, 70000),
+(54, 1, 'AR', 0, 70000),
+(55, 1, 'AS', 0, 70000),
+(56, 1, 'AT', 0, 70000),
+(57, 1, 'AU', 0, 70000),
+(58, 1, 'AV', 1, 70000),
+(59, 1, 'AW', 0, 70000),
+(60, 1, 'AX', 0, 70000);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `ticket`
+--
+
+CREATE TABLE `ticket` (
+  `ticket_id` int NOT NULL,
+  `user_id` int NOT NULL,
+  `seat_id` int NOT NULL,
+  `payment_id` int NOT NULL,
+  `show_id` int NOT NULL,
+  `ticket_name` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `expiry_date` varchar(20) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `ticket`
+--
+
+INSERT INTO `ticket` (`ticket_id`, `user_id`, `seat_id`, `payment_id`, `show_id`, `ticket_name`, `expiry_date`) VALUES
+(36, 1, 3, 46, 43, 'Interstella', '10:00 27-05-2024'),
+(37, 1, 4, 46, 43, 'Interstella', '10:00 27-05-2024'),
+(43, 1, 5, 48, 1, 'Dune', '00:00 27-05-2024');
 
 -- --------------------------------------------------------
 
@@ -187,16 +277,23 @@ INSERT INTO `room_seat` (`seat_id`, `room_id`, `seat_name`, `seat_status`, `pric
 
 CREATE TABLE `user` (
   `user_id` int NOT NULL,
+  `fullname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `password` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `password` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `gender` tinyint NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `password`) VALUES
-(1, 'abc123', 'abc123');
+INSERT INTO `user` (`user_id`, `fullname`, `username`, `password`, `email`, `gender`) VALUES
+(1, 'Nguyễn Đình Hoàng', 'abc123', 'abc123', 'abc@gmail.com', 0),
+(6, 'hag', 'a', 'ah', 'qfģg', 0),
+(7, 'aahbh', 'sdssdd', '0994319247pj', 'abc@gmail.com', 0),
+(8, 'aabbb', 'abc1234', '0994319247pj', 'abc@gmail.com', 0),
+(9, 'abbbc', 'abc12345', '0994319247pj', 'ab@gmail.com', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -231,11 +328,28 @@ ALTER TABLE `movie_show`
   ADD KEY `room_id` (`room_id`);
 
 --
+-- Chỉ mục cho bảng `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`payment_id`),
+  ADD KEY `payment_ibfk_1` (`user_id`);
+
+--
 -- Chỉ mục cho bảng `room_seat`
 --
 ALTER TABLE `room_seat`
   ADD PRIMARY KEY (`seat_id`),
   ADD KEY `room_id` (`room_id`);
+
+--
+-- Chỉ mục cho bảng `ticket`
+--
+ALTER TABLE `ticket`
+  ADD PRIMARY KEY (`ticket_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `seat_id` (`seat_id`),
+  ADD KEY `payment_id` (`payment_id`),
+  ADD KEY `show_id` (`show_id`);
 
 --
 -- Chỉ mục cho bảng `user`
@@ -272,16 +386,28 @@ ALTER TABLE `movie_show`
   MODIFY `show_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
+-- AUTO_INCREMENT cho bảng `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `payment_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
+--
 -- AUTO_INCREMENT cho bảng `room_seat`
 --
 ALTER TABLE `room_seat`
-  MODIFY `seat_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `seat_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
+-- AUTO_INCREMENT cho bảng `ticket`
+--
+ALTER TABLE `ticket`
+  MODIFY `ticket_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -302,10 +428,25 @@ ALTER TABLE `movie_show`
   ADD CONSTRAINT `movie_show_ibfk_3` FOREIGN KEY (`room_id`) REFERENCES `cinema_room` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Các ràng buộc cho bảng `payment`
+--
+ALTER TABLE `payment`
+  ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Các ràng buộc cho bảng `room_seat`
 --
 ALTER TABLE `room_seat`
   ADD CONSTRAINT `room_seat_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `cinema_room` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Các ràng buộc cho bảng `ticket`
+--
+ALTER TABLE `ticket`
+  ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ticket_ibfk_2` FOREIGN KEY (`seat_id`) REFERENCES `room_seat` (`seat_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ticket_ibfk_3` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ticket_ibfk_4` FOREIGN KEY (`show_id`) REFERENCES `movie_show` (`show_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

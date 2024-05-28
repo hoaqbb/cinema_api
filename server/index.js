@@ -5,6 +5,9 @@ const movieRouter = require("./routes/movie.routes");
 const cinemaRouter = require("./routes/cinema.routes");
 const movieshowRouter = require("./routes/movieshow.routes")
 const userRouter = require("./routes/user.routes")
+const roomSeatRouter = require("./routes/roomseat.routes")
+const paymentRouter = require("./routes/payment.routes")
+const ticketRouter = require("./routes/ticket.routes")
 
 app.use(express.json());
 app.use(
@@ -20,7 +23,9 @@ app.use("/movie/api", movieRouter);
 app.use("/cinema/api", cinemaRouter);
 app.use("/movieshow/api", movieshowRouter);
 app.use("/user/api", userRouter);
-
+app.use("/roomseat/api", roomSeatRouter);
+app.use("/payment/api", paymentRouter);
+app.use("/ticket/api", ticketRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

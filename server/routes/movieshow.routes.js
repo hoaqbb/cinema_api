@@ -49,31 +49,46 @@ router.get("/movieshow", async function(req, res, next){
     }
   });
 
-  router.get("/get-movie-showtimes-by-movie_id", async function(req, res, next){
+  router.get("/cinema-showing-movie", async function(req, res, next){
+    try{
+        res.json(await movieshowService.getCinemaShowingMovie(req.query.movie_id));
+    } catch {
+        console.error(err.message);
+        next(err);
+    }
+  })
+
+  router.get("/showtimes-movie", async function(req, res, next){
     try {
         // In error => next(): Middleware: Write after handled route
-        const data = await movieshowService.findShow();
-        const listMovieShow = Array.from(data).map((showItem) => {
+        const data = await movieshowService.getShowtimesMovie(req.query.movie_id, req.query.cinema_id);
+        const listShowtimes = Array.from(data).map((showItem) => {
             const {
-                cinema_name,
+                show_id,
                 cinema_id,
+                cinema_name,
                 start_time,
+                movie_id, 
                 movie_name,
+                room_id
             } = showItem;
             return {
+                show_id,
+                start_time,
                 cinema: {
-                    cinema_name,
-                    cinema_id
-                },
-                movie_show:{
-                    start_time
+                    cinema_id,
+                    cinema_name
                 },
                 movie: {
-                    movie_name,
+                    movie_id,
+                    movie_name
                 },
+                room: {
+                    room_id
+                }
             };
         });
-        res.json(listMovieShow);
+        res.json(listShowtimes);
     //   res.json(await movieshowService.findShow());
     } catch (err) {
       console.error(err.message);

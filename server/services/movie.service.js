@@ -16,8 +16,9 @@ async function getMovies(status){
 async function getMovieById(movie_id){
   const row = await db.query(`SELECT movie_id, movie_name, movie_img, 
                               status, duration, actors, directors, 
-                              release_date, description FROM movie 
+                              release_date, description, trailer FROM movie 
                               WHERE movie_id=${movie_id}`);
+                              //WHERE movie_id=?`, movie_id);
   const data = helper.emptyOrRows(row);
   return data[0]
   // return data.length > 0 ? data[0] : {};
